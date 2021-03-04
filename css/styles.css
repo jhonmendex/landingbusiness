@@ -32,6 +32,19 @@
   font-display: block;
 }
 
+@font-face {
+  font-family: "fira_sansbold";
+  src: url("../fonts/firasans-bold-webfont.eot");
+  src: url("../fonts/firasans-bold-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/firasans-bold-webfont.woff2") format("woff2"),
+    url("../fonts/firasans-bold-webfont.woff") format("woff"),
+    url("../fonts/firasans-bold-webfont.ttf") format("truetype"),
+    url("../fonts/firasans-bold-webfont.svg#fira_sansbold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
 [class^="icon-"],
 [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
@@ -65,16 +78,26 @@ button {
   background: var(--fucsia);
 }
 
-header {
+header,
+footer {
   font-family: "nobilemedium";
 }
 
 footer {
-  color: var(--morado-a);
+  color: inherit;
+  font-size: 9px;
+  display: block;
+  top: -15px;
+  position: relative;
+  text-align: left;
+}
+
+footer ul {
+  margin: 0;
+  padding: 0;
 }
 
 .navvar {
-  color: var(--morado);
   font-size: 9px;
   width: 260px;
   float: left;
@@ -83,12 +106,12 @@ footer {
 
 .wrapper {
   margin: 0px 33px;
-  padding: 23px 0px;
+  padding: 23px 0px 0 0px;
 }
 
 .container {
   width: 611px;
-  background: #fff;
+  background: #fff url("../img/bg-banner.png") no-repeat 270px 0px;
   margin: 0 auto;
   border-radius: 3px;
 }
@@ -106,8 +129,13 @@ a {
 }
 
 .navvar > ul > li {
-  color: var(--morado-a);
   padding: 2px 10px;
+  color: var(--morado);
+}
+
+footer > ul > li > a {
+  color: var(--morado-a);
+  margin-left: 5px;
 }
 
 #logo > h1,
@@ -183,9 +211,27 @@ a {
 }
 
 .banner {
-  font-family: "Firasans";
+  font-family: "fira_sansbold";
   font-weight: bold;
   margin-top: 50px;
+  display: inline-block;
+}
+
+.banner .info {
+  float: left;
+}
+
+.banner .image {
+  width: 0em;
+  display: inline-block;
+}
+
+.banner .image img {
+  width: 250px;
+  height: auto;
+  position: relative;
+  left: 15px;
+  top: -12px;
 }
 
 .banner h1 {
@@ -205,10 +251,10 @@ a {
 }
 
 .banner button {
-  border-radius: 10px;
-  padding: 5px 10px;
+  border-radius: 30px;
+  padding: 7px 25px;
   border: none;
   outline: none;
-  font-size: 1em;
+  font-size: 0.7em;
   text-decoration: underline;
 }
